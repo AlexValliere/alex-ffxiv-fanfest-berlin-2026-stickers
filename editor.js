@@ -86,24 +86,30 @@
 
   function autoScatter() {
     var cols = Math.max(1, Math.ceil(Math.sqrt(stickers.length * 1.2)));
-    var order = stickers.slice();
-    for (var i = order.length - 1; i > 0; i -= 1) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var tmp = order[i];
-      order[i] = order[j];
-      order[j] = tmp;
-    }
+    var order = stickers.slice().sort(Viewer.byRank);
     order.forEach(function (sticker, index) {
       var col = index % cols;
       var row = Math.floor(index / cols);
       sticker.canvas = {
-        x: 80 + col * 230 + Math.random() * 48 - 24,
-        y: 80 + row * 270 + Math.random() * 48 - 24,
-        rot: Math.random() * 18 - 9,
+        x: 80 + col * 230 + Math.random() * 36 - 18,
+        y: 80 + row * 270 + Math.random() * 36 - 18,
+        rot: Math.random() * 12 - 6,
         scale: (sticker.canvas && sticker.canvas.scale) || 1
       };
     });
     refreshViewer(true);
+  }
+
+  function randomizeRanking() {
+    for (var i = stickers.length - 1; i > 0; i -= 1) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = stickers[i];
+      stickers[i] = stickers[j];
+      stickers[j] = tmp;
+    }
+    reindexRanks();
+    renderList();
+    refreshViewer(false);
   }
 
   function download(filename, text) {
@@ -323,5 +329,6 @@
   });
 
   document.getElementById("scatter-btn").addEventListener("click", autoScatter);
+  document.getElementById("shuffle-rank-btn").addEventListener("click", randomizeRanking);
   document.getElementById("export-btn").addEventListener("click", exportFiles);
 })();
