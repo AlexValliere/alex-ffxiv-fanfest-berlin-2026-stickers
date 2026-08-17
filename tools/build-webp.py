@@ -127,6 +127,11 @@ def main() -> int:
         metavar="ID",
         help="Deleted sticker id after files were renamed to close the gap (example: 212)",
     )
+    parser.add_argument(
+        "--skip-convert",
+        action="store_true",
+        help="Only refresh data.js; do not write WebP files",
+    )
     args = parser.parse_args()
     drop_id = parse_id(str(args.drop)) if args.drop else None
     if args.drop and drop_id is None:
@@ -153,9 +158,12 @@ def main() -> int:
         numeric = parse_id(sid)
         shifted = drop_id is not None and numeric is not None and numeric >= drop_id
         needs_write = (
-            shifted
-            or not dest.exists()
-            or dest.stat().st_mtime < png.stat().st_mtime
+            not args.skip_convert
+            and (
+                shifted
+                or not dest.exists()
+                or dest.stat().st_mtime < png.stat().st_mtime
+            )
         )
         if needs_write:
             convert_png(png, dest)

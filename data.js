@@ -32,8 +32,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "206",
-    "webp": "webp/206.webp",
+    "id": "205",
+    "webp": "webp/205.webp",
     "label": "Teija (By Ru)",
     "url": "https://bsky.app/profile/arukeiso.bsky.social",
     "rank": 3,
@@ -45,8 +45,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "223",
-    "webp": "webp/223.webp",
+    "id": "222",
+    "webp": "webp/222.webp",
     "label": "Ru (By Ru)",
     "url": "https://bsky.app/profile/arukeiso.bsky.social",
     "rank": 4,
@@ -58,8 +58,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "144",
-    "webp": "webp/144.webp",
+    "id": "143",
+    "webp": "webp/143.webp",
     "label": "Ru (By Ru)",
     "url": "https://bsky.app/profile/arukeiso.bsky.social",
     "rank": 5,
@@ -97,8 +97,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "186",
-    "webp": "webp/186.webp",
+    "id": "185",
+    "webp": "webp/185.webp",
     "label": "",
     "url": "",
     "rank": 8,
@@ -110,8 +110,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "159",
-    "webp": "webp/159.webp",
+    "id": "158",
+    "webp": "webp/158.webp",
     "label": "",
     "url": "",
     "rank": 9,
@@ -162,8 +162,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "204",
-    "webp": "webp/204.webp",
+    "id": "203",
+    "webp": "webp/203.webp",
     "label": "",
     "url": "",
     "rank": 13,
@@ -253,8 +253,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "192",
-    "webp": "webp/192.webp",
+    "id": "191",
+    "webp": "webp/191.webp",
     "label": "",
     "url": "",
     "rank": 20,
@@ -266,8 +266,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "187",
-    "webp": "webp/187.webp",
+    "id": "186",
+    "webp": "webp/186.webp",
     "label": "",
     "url": "",
     "rank": 21,
@@ -318,8 +318,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "163",
-    "webp": "webp/163.webp",
+    "id": "162",
+    "webp": "webp/162.webp",
     "label": "",
     "url": "",
     "rank": 25,
@@ -331,8 +331,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "221",
-    "webp": "webp/221.webp",
+    "id": "220",
+    "webp": "webp/220.webp",
     "label": "",
     "url": "",
     "rank": 26,
@@ -448,8 +448,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "146",
-    "webp": "webp/146.webp",
+    "id": "145",
+    "webp": "webp/145.webp",
     "label": "",
     "url": "",
     "rank": 35,
@@ -487,8 +487,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "150",
-    "webp": "webp/150.webp",
+    "id": "149",
+    "webp": "webp/149.webp",
     "label": "",
     "url": "",
     "rank": 38,
@@ -526,8 +526,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "215",
-    "webp": "webp/215.webp",
+    "id": "214",
+    "webp": "webp/214.webp",
     "label": "",
     "url": "",
     "rank": 41,
@@ -565,8 +565,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "189",
-    "webp": "webp/189.webp",
+    "id": "188",
+    "webp": "webp/188.webp",
     "label": "",
     "url": "",
     "rank": 44,
@@ -591,8 +591,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "177",
-    "webp": "webp/177.webp",
+    "id": "176",
+    "webp": "webp/176.webp",
     "label": "",
     "url": "",
     "rank": 46,
@@ -630,8 +630,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "148",
-    "webp": "webp/148.webp",
+    "id": "147",
+    "webp": "webp/147.webp",
     "label": "",
     "url": "",
     "rank": 49,
@@ -656,8 +656,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "202",
-    "webp": "webp/202.webp",
+    "id": "201",
+    "webp": "webp/201.webp",
     "label": "",
     "url": "",
     "rank": 51,
@@ -682,8 +682,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "217",
-    "webp": "webp/217.webp",
+    "id": "216",
+    "webp": "webp/216.webp",
     "label": "",
     "url": "",
     "rank": 53,
@@ -695,8 +695,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "147",
-    "webp": "webp/147.webp",
+    "id": "146",
+    "webp": "webp/146.webp",
     "label": "",
     "url": "",
     "rank": 54,
@@ -708,8 +708,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "193",
-    "webp": "webp/193.webp",
+    "id": "192",
+    "webp": "webp/192.webp",
     "label": "",
     "url": "",
     "rank": 55,
@@ -721,8 +721,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "195",
-    "webp": "webp/195.webp",
+    "id": "194",
+    "webp": "webp/194.webp",
     "label": "",
     "url": "",
     "rank": 56,
@@ -747,8 +747,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "216",
-    "webp": "webp/216.webp",
+    "id": "215",
+    "webp": "webp/215.webp",
     "label": "",
     "url": "",
     "rank": 58,
@@ -760,8 +760,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "167",
-    "webp": "webp/167.webp",
+    "id": "166",
+    "webp": "webp/166.webp",
     "label": "",
     "url": "",
     "rank": 59,
@@ -786,8 +786,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "198",
-    "webp": "webp/198.webp",
+    "id": "197",
+    "webp": "webp/197.webp",
     "label": "",
     "url": "",
     "rank": 61,
@@ -851,8 +851,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "143",
-    "webp": "webp/143.webp",
+    "id": "142",
+    "webp": "webp/142.webp",
     "label": "",
     "url": "",
     "rank": 66,
@@ -864,8 +864,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "210",
-    "webp": "webp/210.webp",
+    "id": "209",
+    "webp": "webp/209.webp",
     "label": "",
     "url": "",
     "rank": 67,
@@ -890,8 +890,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "183",
-    "webp": "webp/183.webp",
+    "id": "182",
+    "webp": "webp/182.webp",
     "label": "",
     "url": "",
     "rank": 69,
@@ -916,8 +916,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "197",
-    "webp": "webp/197.webp",
+    "id": "196",
+    "webp": "webp/196.webp",
     "label": "",
     "url": "",
     "rank": 71,
@@ -929,8 +929,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "214",
-    "webp": "webp/214.webp",
+    "id": "213",
+    "webp": "webp/213.webp",
     "label": "",
     "url": "",
     "rank": 72,
@@ -942,8 +942,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "213",
-    "webp": "webp/213.webp",
+    "id": "212",
+    "webp": "webp/212.webp",
     "label": "",
     "url": "",
     "rank": 73,
@@ -968,8 +968,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "181",
-    "webp": "webp/181.webp",
+    "id": "180",
+    "webp": "webp/180.webp",
     "label": "",
     "url": "",
     "rank": 75,
@@ -994,8 +994,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "219",
-    "webp": "webp/219.webp",
+    "id": "218",
+    "webp": "webp/218.webp",
     "label": "",
     "url": "",
     "rank": 77,
@@ -1020,8 +1020,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "173",
-    "webp": "webp/173.webp",
+    "id": "172",
+    "webp": "webp/172.webp",
     "label": "",
     "url": "",
     "rank": 79,
@@ -1033,8 +1033,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "140",
-    "webp": "webp/140.webp",
+    "id": "139",
+    "webp": "webp/139.webp",
     "label": "",
     "url": "",
     "rank": 80,
@@ -1046,8 +1046,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "153",
-    "webp": "webp/153.webp",
+    "id": "152",
+    "webp": "webp/152.webp",
     "label": "",
     "url": "",
     "rank": 81,
@@ -1085,8 +1085,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "176",
-    "webp": "webp/176.webp",
+    "id": "175",
+    "webp": "webp/175.webp",
     "label": "",
     "url": "",
     "rank": 84,
@@ -1098,8 +1098,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "151",
-    "webp": "webp/151.webp",
+    "id": "150",
+    "webp": "webp/150.webp",
     "label": "",
     "url": "",
     "rank": 85,
@@ -1124,8 +1124,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "212",
-    "webp": "webp/212.webp",
+    "id": "211",
+    "webp": "webp/211.webp",
     "label": "",
     "url": "",
     "rank": 87,
@@ -1137,8 +1137,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "157",
-    "webp": "webp/157.webp",
+    "id": "156",
+    "webp": "webp/156.webp",
     "label": "",
     "url": "",
     "rank": 88,
@@ -1189,8 +1189,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "168",
-    "webp": "webp/168.webp",
+    "id": "167",
+    "webp": "webp/167.webp",
     "label": "",
     "url": "",
     "rank": 92,
@@ -1202,8 +1202,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "220",
-    "webp": "webp/220.webp",
+    "id": "219",
+    "webp": "webp/219.webp",
     "label": "",
     "url": "",
     "rank": 93,
@@ -1280,8 +1280,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "141",
-    "webp": "webp/141.webp",
+    "id": "140",
+    "webp": "webp/140.webp",
     "label": "",
     "url": "",
     "rank": 99,
@@ -1332,8 +1332,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "156",
-    "webp": "webp/156.webp",
+    "id": "155",
+    "webp": "webp/155.webp",
     "label": "",
     "url": "",
     "rank": 103,
@@ -1345,8 +1345,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "201",
-    "webp": "webp/201.webp",
+    "id": "200",
+    "webp": "webp/200.webp",
     "label": "",
     "url": "",
     "rank": 104,
@@ -1397,8 +1397,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "194",
-    "webp": "webp/194.webp",
+    "id": "193",
+    "webp": "webp/193.webp",
     "label": "",
     "url": "",
     "rank": 108,
@@ -1436,8 +1436,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "171",
-    "webp": "webp/171.webp",
+    "id": "170",
+    "webp": "webp/170.webp",
     "label": "",
     "url": "",
     "rank": 111,
@@ -1449,8 +1449,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "185",
-    "webp": "webp/185.webp",
+    "id": "184",
+    "webp": "webp/184.webp",
     "label": "",
     "url": "",
     "rank": 112,
@@ -1475,8 +1475,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "218",
-    "webp": "webp/218.webp",
+    "id": "217",
+    "webp": "webp/217.webp",
     "label": "",
     "url": "",
     "rank": 114,
@@ -1514,8 +1514,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "178",
-    "webp": "webp/178.webp",
+    "id": "177",
+    "webp": "webp/177.webp",
     "label": "",
     "url": "",
     "rank": 117,
@@ -1579,8 +1579,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "149",
-    "webp": "webp/149.webp",
+    "id": "148",
+    "webp": "webp/148.webp",
     "label": "",
     "url": "",
     "rank": 122,
@@ -1592,8 +1592,8 @@ window.STICKERS = [
     }
   },
   {
-    "id": "182",
-    "webp": "webp/182.webp",
+    "id": "181",
+    "webp": "webp/181.webp",
     "label": "",
     "url": "",
     "rank": 123,
@@ -1618,24 +1618,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "139",
-    "webp": "webp/139.webp",
-    "label": "",
-    "url": "",
-    "rank": 125,
-    "canvas": {
-      "x": 1232.4573419795279,
-      "y": 1958.1780548207332,
-      "rot": 2.050517559717669,
-      "scale": 1
-    }
-  },
-  {
     "id": "125",
     "webp": "webp/125.webp",
     "label": "",
     "url": "",
-    "rank": 126,
+    "rank": 125,
     "canvas": {
       "x": 1459.2506069929832,
       "y": 1959.5564789446737,
@@ -1648,7 +1635,7 @@ window.STICKERS = [
     "webp": "webp/133.webp",
     "label": "",
     "url": "",
-    "rank": 127,
+    "rank": 126,
     "canvas": {
       "x": 1677.959530737821,
       "y": 1965.9758445289667,
@@ -1661,7 +1648,7 @@ window.STICKERS = [
     "webp": "webp/106.webp",
     "label": "",
     "url": "",
-    "rank": 128,
+    "rank": 127,
     "canvas": {
       "x": 1923.0065286749157,
       "y": 1970.7169500739178,
@@ -1674,7 +1661,7 @@ window.STICKERS = [
     "webp": "webp/129.webp",
     "label": "",
     "url": "",
-    "rank": 129,
+    "rank": 128,
     "canvas": {
       "x": 2161.3344513092006,
       "y": 1960.7497432157593,
@@ -1683,11 +1670,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "205",
-    "webp": "webp/205.webp",
+    "id": "204",
+    "webp": "webp/204.webp",
     "label": "",
     "url": "",
-    "rank": 130,
+    "rank": 129,
     "canvas": {
       "x": 2380.7589265402253,
       "y": 1972.6847668426,
@@ -1700,7 +1687,7 @@ window.STICKERS = [
     "webp": "webp/136.webp",
     "label": "",
     "url": "",
-    "rank": 131,
+    "rank": 130,
     "canvas": {
       "x": 2622.4745910870806,
       "y": 1971.094477941683,
@@ -1713,7 +1700,7 @@ window.STICKERS = [
     "webp": "webp/048.webp",
     "label": "",
     "url": "",
-    "rank": 132,
+    "rank": 131,
     "canvas": {
       "x": 2854.56753024008,
       "y": 1985.0255217366644,
@@ -1722,11 +1709,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "203",
-    "webp": "webp/203.webp",
+    "id": "202",
+    "webp": "webp/202.webp",
     "label": "",
     "url": "",
-    "rank": 133,
+    "rank": 132,
     "canvas": {
       "x": 3082.8805237822726,
       "y": 1956.1609728107157,
@@ -1739,7 +1726,7 @@ window.STICKERS = [
     "webp": "webp/018.webp",
     "label": "",
     "url": "",
-    "rank": 134,
+    "rank": 133,
     "canvas": {
       "x": 3308.1264366072446,
       "y": 1965.2175831156412,
@@ -1752,7 +1739,7 @@ window.STICKERS = [
     "webp": "webp/009.webp",
     "label": "",
     "url": "",
-    "rank": 135,
+    "rank": 134,
     "canvas": {
       "x": 3524.5107759406333,
       "y": 1975.6973160909417,
@@ -1761,11 +1748,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "175",
-    "webp": "webp/175.webp",
+    "id": "174",
+    "webp": "webp/174.webp",
     "label": "",
     "url": "",
-    "rank": 136,
+    "rank": 135,
     "canvas": {
       "x": 3764.425122216394,
       "y": 1980.0473132112234,
@@ -1774,11 +1761,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "191",
-    "webp": "webp/191.webp",
+    "id": "190",
+    "webp": "webp/190.webp",
     "label": "",
     "url": "",
-    "rank": 137,
+    "rank": 136,
     "canvas": {
       "x": 68.15585626219145,
       "y": 2247.1626961113616,
@@ -1791,7 +1778,7 @@ window.STICKERS = [
     "webp": "webp/066.webp",
     "label": "",
     "url": "",
-    "rank": 138,
+    "rank": 137,
     "canvas": {
       "x": 294.6526761632485,
       "y": 2249.1519337968334,
@@ -1804,7 +1791,7 @@ window.STICKERS = [
     "webp": "webp/075.webp",
     "label": "",
     "url": "",
-    "rank": 139,
+    "rank": 138,
     "canvas": {
       "x": 527.9898813647092,
       "y": 2231.5069456138135,
@@ -1817,7 +1804,7 @@ window.STICKERS = [
     "webp": "webp/034.webp",
     "label": "",
     "url": "",
-    "rank": 140,
+    "rank": 139,
     "canvas": {
       "x": 777.7170745858743,
       "y": 2232.287213112077,
@@ -1830,7 +1817,7 @@ window.STICKERS = [
     "webp": "webp/064.webp",
     "label": "",
     "url": "",
-    "rank": 141,
+    "rank": 140,
     "canvas": {
       "x": 1005.0801784201669,
       "y": 2230.064913226888,
@@ -1843,7 +1830,7 @@ window.STICKERS = [
     "webp": "webp/105.webp",
     "label": "",
     "url": "",
-    "rank": 142,
+    "rank": 141,
     "canvas": {
       "x": 1238.6237808094643,
       "y": 2226.7412303488622,
@@ -1856,7 +1843,7 @@ window.STICKERS = [
     "webp": "webp/011.webp",
     "label": "",
     "url": "",
-    "rank": 143,
+    "rank": 142,
     "canvas": {
       "x": 1466.3372675540156,
       "y": 2250.4900277294887,
@@ -1869,7 +1856,7 @@ window.STICKERS = [
     "webp": "webp/071.webp",
     "label": "",
     "url": "",
-    "rank": 144,
+    "rank": 143,
     "canvas": {
       "x": 1701.120230963441,
       "y": 2248.0244224500802,
@@ -1882,7 +1869,7 @@ window.STICKERS = [
     "webp": "webp/113.webp",
     "label": "",
     "url": "",
-    "rank": 145,
+    "rank": 144,
     "canvas": {
       "x": 1921.71429262507,
       "y": 2229.9659004180226,
@@ -1895,7 +1882,7 @@ window.STICKERS = [
     "webp": "webp/072.webp",
     "label": "",
     "url": "",
-    "rank": 146,
+    "rank": 145,
     "canvas": {
       "x": 2144.5154314044166,
       "y": 2226.350970333332,
@@ -1908,7 +1895,7 @@ window.STICKERS = [
     "webp": "webp/089.webp",
     "label": "",
     "url": "",
-    "rank": 147,
+    "rank": 146,
     "canvas": {
       "x": 2376.261621304126,
       "y": 2243.3297539185796,
@@ -1921,7 +1908,7 @@ window.STICKERS = [
     "webp": "webp/024.webp",
     "label": "",
     "url": "",
-    "rank": 148,
+    "rank": 147,
     "canvas": {
       "x": 2621.161414425591,
       "y": 2223.84969329286,
@@ -1934,7 +1921,7 @@ window.STICKERS = [
     "webp": "webp/022.webp",
     "label": "",
     "url": "",
-    "rank": 149,
+    "rank": 148,
     "canvas": {
       "x": 2857.015967928035,
       "y": 2245.968375804703,
@@ -1947,7 +1934,7 @@ window.STICKERS = [
     "webp": "webp/016.webp",
     "label": "",
     "url": "",
-    "rank": 150,
+    "rank": 149,
     "canvas": {
       "x": 3069.3108945543504,
       "y": 2250.0555109475536,
@@ -1956,11 +1943,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "145",
-    "webp": "webp/145.webp",
+    "id": "144",
+    "webp": "webp/144.webp",
     "label": "",
     "url": "",
-    "rank": 151,
+    "rank": 150,
     "canvas": {
       "x": 3291.6292671954234,
       "y": 2245.925814775509,
@@ -1973,7 +1960,7 @@ window.STICKERS = [
     "webp": "webp/044.webp",
     "label": "",
     "url": "",
-    "rank": 152,
+    "rank": 151,
     "canvas": {
       "x": 3543.5753491031915,
       "y": 2237.131722989544,
@@ -1982,11 +1969,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "184",
-    "webp": "webp/184.webp",
+    "id": "183",
+    "webp": "webp/183.webp",
     "label": "",
     "url": "",
-    "rank": 153,
+    "rank": 152,
     "canvas": {
       "x": 3760.934386720709,
       "y": 2252.5785121588956,
@@ -1999,7 +1986,7 @@ window.STICKERS = [
     "webp": "webp/061.webp",
     "label": "",
     "url": "",
-    "rank": 154,
+    "rank": 153,
     "canvas": {
       "x": 77.01053309060813,
       "y": 2524.9760833374644,
@@ -2008,11 +1995,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "162",
-    "webp": "webp/162.webp",
+    "id": "161",
+    "webp": "webp/161.webp",
     "label": "",
     "url": "",
-    "rank": 155,
+    "rank": 154,
     "canvas": {
       "x": 292.37811467273457,
       "y": 2519.9569357189025,
@@ -2021,11 +2008,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "160",
-    "webp": "webp/160.webp",
+    "id": "159",
+    "webp": "webp/159.webp",
     "label": "",
     "url": "",
-    "rank": 156,
+    "rank": 155,
     "canvas": {
       "x": 526.3971018837909,
       "y": 2508.3333117283705,
@@ -2034,11 +2021,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "190",
-    "webp": "webp/190.webp",
+    "id": "189",
+    "webp": "webp/189.webp",
     "label": "",
     "url": "",
-    "rank": 157,
+    "rank": 156,
     "canvas": {
       "x": 762.6608490983983,
       "y": 2521.556986509996,
@@ -2051,7 +2038,7 @@ window.STICKERS = [
     "webp": "webp/104.webp",
     "label": "",
     "url": "",
-    "rank": 158,
+    "rank": 157,
     "canvas": {
       "x": 1001.4800202704406,
       "y": 2498.886870989315,
@@ -2064,7 +2051,7 @@ window.STICKERS = [
     "webp": "webp/039.webp",
     "label": "",
     "url": "",
-    "rank": 159,
+    "rank": 158,
     "canvas": {
       "x": 1225.2198520572624,
       "y": 2502.9586190074515,
@@ -2073,11 +2060,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "170",
-    "webp": "webp/170.webp",
+    "id": "169",
+    "webp": "webp/169.webp",
     "label": "",
     "url": "",
-    "rank": 160,
+    "rank": 159,
     "canvas": {
       "x": 1464.423023075752,
       "y": 2527.5661514347526,
@@ -2086,11 +2073,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "164",
-    "webp": "webp/164.webp",
+    "id": "163",
+    "webp": "webp/163.webp",
     "label": "",
     "url": "",
-    "rank": 161,
+    "rank": 160,
     "canvas": {
       "x": 1681.0335118091596,
       "y": 2513.1554642034557,
@@ -2103,7 +2090,7 @@ window.STICKERS = [
     "webp": "webp/117.webp",
     "label": "",
     "url": "",
-    "rank": 162,
+    "rank": 161,
     "canvas": {
       "x": 1915.2856802983372,
       "y": 2508.5999639484644,
@@ -2112,11 +2099,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "155",
-    "webp": "webp/155.webp",
+    "id": "154",
+    "webp": "webp/154.webp",
     "label": "",
     "url": "",
-    "rank": 163,
+    "rank": 162,
     "canvas": {
       "x": 2161.546366555291,
       "y": 2506.593537334434,
@@ -2125,11 +2112,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "179",
-    "webp": "webp/179.webp",
+    "id": "178",
+    "webp": "webp/178.webp",
     "label": "",
     "url": "",
-    "rank": 164,
+    "rank": 163,
     "canvas": {
       "x": 2364.7172111780606,
       "y": 2522.75767253434,
@@ -2142,7 +2129,7 @@ window.STICKERS = [
     "webp": "webp/043.webp",
     "label": "",
     "url": "",
-    "rank": 165,
+    "rank": 164,
     "canvas": {
       "x": 2595.847235006521,
       "y": 2503.197348516951,
@@ -2155,7 +2142,7 @@ window.STICKERS = [
     "webp": "webp/050.webp",
     "label": "",
     "url": "",
-    "rank": 166,
+    "rank": 165,
     "canvas": {
       "x": 2831.659031392001,
       "y": 2498.4532508357825,
@@ -2168,7 +2155,7 @@ window.STICKERS = [
     "webp": "webp/063.webp",
     "label": "",
     "url": "",
-    "rank": 167,
+    "rank": 166,
     "canvas": {
       "x": 3078.470701034852,
       "y": 2509.906124894307,
@@ -2181,7 +2168,7 @@ window.STICKERS = [
     "webp": "webp/035.webp",
     "label": "",
     "url": "",
-    "rank": 168,
+    "rank": 167,
     "canvas": {
       "x": 3295.886685014385,
       "y": 2507.962645306898,
@@ -2190,11 +2177,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "165",
-    "webp": "webp/165.webp",
+    "id": "164",
+    "webp": "webp/164.webp",
     "label": "",
     "url": "",
-    "rank": 169,
+    "rank": 168,
     "canvas": {
       "x": 3527.459667267439,
       "y": 2524.4042493289617,
@@ -2203,11 +2190,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "222",
-    "webp": "webp/222.webp",
+    "id": "221",
+    "webp": "webp/221.webp",
     "label": "",
     "url": "",
-    "rank": 170,
+    "rank": 169,
     "canvas": {
       "x": 3770.640537885178,
       "y": 2510.426228881136,
@@ -2216,11 +2203,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "169",
-    "webp": "webp/169.webp",
+    "id": "168",
+    "webp": "webp/168.webp",
     "label": "",
     "url": "",
-    "rank": 171,
+    "rank": 170,
     "canvas": {
       "x": 85.77078340429888,
       "y": 2787.3143356542355,
@@ -2233,7 +2220,7 @@ window.STICKERS = [
     "webp": "webp/107.webp",
     "label": "",
     "url": "",
-    "rank": 172,
+    "rank": 171,
     "canvas": {
       "x": 312.7093906180932,
       "y": 2778.105028239121,
@@ -2246,7 +2233,7 @@ window.STICKERS = [
     "webp": "webp/025.webp",
     "label": "",
     "url": "",
-    "rank": 173,
+    "rank": 172,
     "canvas": {
       "x": 535.7008097776401,
       "y": 2768.4623370489053,
@@ -2259,7 +2246,7 @@ window.STICKERS = [
     "webp": "webp/124.webp",
     "label": "",
     "url": "",
-    "rank": 174,
+    "rank": 173,
     "canvas": {
       "x": 761.8039307473142,
       "y": 2769.077692826164,
@@ -2268,11 +2255,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "207",
-    "webp": "webp/207.webp",
+    "id": "206",
+    "webp": "webp/206.webp",
     "label": "",
     "url": "",
-    "rank": 175,
+    "rank": 174,
     "canvas": {
       "x": 991.1188541294285,
       "y": 2772.5043697518186,
@@ -2285,7 +2272,7 @@ window.STICKERS = [
     "webp": "webp/065.webp",
     "label": "",
     "url": "",
-    "rank": 176,
+    "rank": 175,
     "canvas": {
       "x": 1220.941656272243,
       "y": 2764.4152083945614,
@@ -2298,7 +2285,7 @@ window.STICKERS = [
     "webp": "webp/007.webp",
     "label": "",
     "url": "",
-    "rank": 177,
+    "rank": 176,
     "canvas": {
       "x": 1452.6885604128256,
       "y": 2784.7135120420917,
@@ -2307,11 +2294,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "152",
-    "webp": "webp/152.webp",
+    "id": "151",
+    "webp": "webp/151.webp",
     "label": "",
     "url": "",
-    "rank": 178,
+    "rank": 177,
     "canvas": {
       "x": 1699.6616818551545,
       "y": 2782.287113131028,
@@ -2324,7 +2311,7 @@ window.STICKERS = [
     "webp": "webp/118.webp",
     "label": "",
     "url": "",
-    "rank": 179,
+    "rank": 178,
     "canvas": {
       "x": 1913.4910102013832,
       "y": 2763.7951227371736,
@@ -2337,7 +2324,7 @@ window.STICKERS = [
     "webp": "webp/084.webp",
     "label": "",
     "url": "",
-    "rank": 180,
+    "rank": 179,
     "canvas": {
       "x": 2147.35088961221,
       "y": 2784.2267503288886,
@@ -2350,7 +2337,7 @@ window.STICKERS = [
     "webp": "webp/073.webp",
     "label": "",
     "url": "",
-    "rank": 181,
+    "rank": 180,
     "canvas": {
       "x": 2374.708275761156,
       "y": 2775.797884249413,
@@ -2359,11 +2346,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "172",
-    "webp": "webp/172.webp",
+    "id": "171",
+    "webp": "webp/171.webp",
     "label": "",
     "url": "",
-    "rank": 182,
+    "rank": 181,
     "canvas": {
       "x": 2595.442935756781,
       "y": 2766.794139742083,
@@ -2372,11 +2359,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "142",
-    "webp": "webp/142.webp",
+    "id": "141",
+    "webp": "webp/141.webp",
     "label": "",
     "url": "",
-    "rank": 183,
+    "rank": 182,
     "canvas": {
       "x": 2833.103871413998,
       "y": 2769.6465819656087,
@@ -2389,7 +2376,7 @@ window.STICKERS = [
     "webp": "webp/126.webp",
     "label": "",
     "url": "",
-    "rank": 184,
+    "rank": 183,
     "canvas": {
       "x": 3086.3439320985067,
       "y": 2787.7218394313763,
@@ -2402,7 +2389,7 @@ window.STICKERS = [
     "webp": "webp/067.webp",
     "label": "",
     "url": "",
-    "rank": 185,
+    "rank": 184,
     "canvas": {
       "x": 3289.9065154809905,
       "y": 2790.6165134513276,
@@ -2415,7 +2402,7 @@ window.STICKERS = [
     "webp": "webp/121.webp",
     "label": "",
     "url": "",
-    "rank": 186,
+    "rank": 185,
     "canvas": {
       "x": 3547.219573136566,
       "y": 2779.533229782105,
@@ -2428,7 +2415,7 @@ window.STICKERS = [
     "webp": "webp/119.webp",
     "label": "",
     "url": "",
-    "rank": 187,
+    "rank": 186,
     "canvas": {
       "x": 3768.1386076589156,
       "y": 2780.934208353787,
@@ -2441,7 +2428,7 @@ window.STICKERS = [
     "webp": "webp/047.webp",
     "label": "",
     "url": "",
-    "rank": 188,
+    "rank": 187,
     "canvas": {
       "x": 78.20723027661766,
       "y": 3051.9564321283506,
@@ -2450,11 +2437,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "188",
-    "webp": "webp/188.webp",
+    "id": "187",
+    "webp": "webp/187.webp",
     "label": "",
     "url": "",
-    "rank": 189,
+    "rank": 188,
     "canvas": {
       "x": 297.513899047843,
       "y": 3049.8873944302113,
@@ -2467,7 +2454,7 @@ window.STICKERS = [
     "webp": "webp/031.webp",
     "label": "",
     "url": "",
-    "rank": 190,
+    "rank": 189,
     "canvas": {
       "x": 531.3859276542831,
       "y": 3041.947356187539,
@@ -2480,7 +2467,7 @@ window.STICKERS = [
     "webp": "webp/108.webp",
     "label": "",
     "url": "",
-    "rank": 191,
+    "rank": 190,
     "canvas": {
       "x": 772.4251246628198,
       "y": 3054.9910493323464,
@@ -2493,7 +2480,7 @@ window.STICKERS = [
     "webp": "webp/087.webp",
     "label": "",
     "url": "",
-    "rank": 192,
+    "rank": 191,
     "canvas": {
       "x": 994.6767079595478,
       "y": 3060.3167256317292,
@@ -2502,11 +2489,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "154",
-    "webp": "webp/154.webp",
+    "id": "153",
+    "webp": "webp/153.webp",
     "label": "",
     "url": "",
-    "rank": 193,
+    "rank": 192,
     "canvas": {
       "x": 1234.059274202797,
       "y": 3064.0812085487273,
@@ -2515,11 +2502,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "158",
-    "webp": "webp/158.webp",
+    "id": "157",
+    "webp": "webp/157.webp",
     "label": "",
     "url": "",
-    "rank": 194,
+    "rank": 193,
     "canvas": {
       "x": 1476.0443230610422,
       "y": 3037.928220586678,
@@ -2532,7 +2519,7 @@ window.STICKERS = [
     "webp": "webp/123.webp",
     "label": "",
     "url": "",
-    "rank": 195,
+    "rank": 194,
     "canvas": {
       "x": 1700.1314554395976,
       "y": 3041.823452618598,
@@ -2541,11 +2528,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "166",
-    "webp": "webp/166.webp",
+    "id": "165",
+    "webp": "webp/165.webp",
     "label": "",
     "url": "",
-    "rank": 196,
+    "rank": 195,
     "canvas": {
       "x": 1936.376780168431,
       "y": 3051.131984732679,
@@ -2558,7 +2545,7 @@ window.STICKERS = [
     "webp": "webp/023.webp",
     "label": "",
     "url": "",
-    "rank": 197,
+    "rank": 196,
     "canvas": {
       "x": 2163.340713157233,
       "y": 3046.96037571913,
@@ -2571,7 +2558,7 @@ window.STICKERS = [
     "webp": "webp/091.webp",
     "label": "",
     "url": "",
-    "rank": 198,
+    "rank": 197,
     "canvas": {
       "x": 2375.8340726961715,
       "y": 3039.1281079022365,
@@ -2584,7 +2571,7 @@ window.STICKERS = [
     "webp": "webp/019.webp",
     "label": "",
     "url": "",
-    "rank": 199,
+    "rank": 198,
     "canvas": {
       "x": 2617.345658614611,
       "y": 3036.3295539817013,
@@ -2597,7 +2584,7 @@ window.STICKERS = [
     "webp": "webp/112.webp",
     "label": "",
     "url": "",
-    "rank": 200,
+    "rank": 199,
     "canvas": {
       "x": 2840.397233667497,
       "y": 3051.2324939972823,
@@ -2610,7 +2597,7 @@ window.STICKERS = [
     "webp": "webp/036.webp",
     "label": "",
     "url": "",
-    "rank": 201,
+    "rank": 200,
     "canvas": {
       "x": 3060.7543066611474,
       "y": 3058.4292398598577,
@@ -2623,7 +2610,7 @@ window.STICKERS = [
     "webp": "webp/057.webp",
     "label": "",
     "url": "",
-    "rank": 202,
+    "rank": 201,
     "canvas": {
       "x": 3290.4028897420735,
       "y": 3059.399366115407,
@@ -2632,11 +2619,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "180",
-    "webp": "webp/180.webp",
+    "id": "179",
+    "webp": "webp/179.webp",
     "label": "",
     "url": "",
-    "rank": 203,
+    "rank": 202,
     "canvas": {
       "x": 3529.258105626306,
       "y": 3042.7772019922495,
@@ -2649,7 +2636,7 @@ window.STICKERS = [
     "webp": "webp/042.webp",
     "label": "",
     "url": "",
-    "rank": 204,
+    "rank": 203,
     "canvas": {
       "x": 3757.6498658094174,
       "y": 3063.414907305411,
@@ -2658,11 +2645,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "196",
-    "webp": "webp/196.webp",
+    "id": "195",
+    "webp": "webp/195.webp",
     "label": "",
     "url": "",
-    "rank": 205,
+    "rank": 204,
     "canvas": {
       "x": 88.2235279764917,
       "y": 3320.2493470688564,
@@ -2675,7 +2662,7 @@ window.STICKERS = [
     "webp": "webp/004.webp",
     "label": "",
     "url": "",
-    "rank": 206,
+    "rank": 205,
     "canvas": {
       "x": 302.26693841422417,
       "y": 3320.782202570771,
@@ -2688,7 +2675,7 @@ window.STICKERS = [
     "webp": "webp/076.webp",
     "label": "",
     "url": "",
-    "rank": 207,
+    "rank": 206,
     "canvas": {
       "x": 526.0615201678663,
       "y": 3330.935566683459,
@@ -2701,7 +2688,7 @@ window.STICKERS = [
     "webp": "webp/074.webp",
     "label": "",
     "url": "",
-    "rank": 208,
+    "rank": 207,
     "canvas": {
       "x": 776.5432008541329,
       "y": 3317.7591848483203,
@@ -2714,7 +2701,7 @@ window.STICKERS = [
     "webp": "webp/094.webp",
     "label": "",
     "url": "",
-    "rank": 209,
+    "rank": 208,
     "canvas": {
       "x": 985.5709112829654,
       "y": 3310.3691674816373,
@@ -2723,11 +2710,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "199",
-    "webp": "webp/199.webp",
+    "id": "198",
+    "webp": "webp/198.webp",
     "label": "",
     "url": "",
-    "rank": 210,
+    "rank": 209,
     "canvas": {
       "x": 1224.4931424572478,
       "y": 3337.4955412048967,
@@ -2740,7 +2727,7 @@ window.STICKERS = [
     "webp": "webp/135.webp",
     "label": "",
     "url": "",
-    "rank": 211,
+    "rank": 210,
     "canvas": {
       "x": 1475.1188948702918,
       "y": 3305.7443235593687,
@@ -2753,7 +2740,7 @@ window.STICKERS = [
     "webp": "webp/005.webp",
     "label": "",
     "url": "",
-    "rank": 212,
+    "rank": 211,
     "canvas": {
       "x": 1683.2023779072226,
       "y": 3319.945614110175,
@@ -2766,7 +2753,7 @@ window.STICKERS = [
     "webp": "webp/138.webp",
     "label": "",
     "url": "",
-    "rank": 213,
+    "rank": 212,
     "canvas": {
       "x": 1917.1365402700224,
       "y": 3315.785220957904,
@@ -2775,11 +2762,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "200",
-    "webp": "webp/200.webp",
+    "id": "199",
+    "webp": "webp/199.webp",
     "label": "",
     "url": "",
-    "rank": 214,
+    "rank": 213,
     "canvas": {
       "x": 2163.437761552763,
       "y": 3311.568857216517,
@@ -2788,11 +2775,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "209",
-    "webp": "webp/209.webp",
+    "id": "208",
+    "webp": "webp/208.webp",
     "label": "",
     "url": "",
-    "rank": 215,
+    "rank": 214,
     "canvas": {
       "x": 2395.2978658415345,
       "y": 3309.695002824548,
@@ -2801,11 +2788,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "208",
-    "webp": "webp/208.webp",
+    "id": "207",
+    "webp": "webp/207.webp",
     "label": "",
     "url": "",
-    "rank": 216,
+    "rank": 215,
     "canvas": {
       "x": 2612.120351901717,
       "y": 3320.851512201725,
@@ -2818,7 +2805,7 @@ window.STICKERS = [
     "webp": "webp/100.webp",
     "label": "",
     "url": "",
-    "rank": 217,
+    "rank": 216,
     "canvas": {
       "x": 2837.1089246804995,
       "y": 3314.129020159176,
@@ -2831,7 +2818,7 @@ window.STICKERS = [
     "webp": "webp/017.webp",
     "label": "",
     "url": "",
-    "rank": 218,
+    "rank": 217,
     "canvas": {
       "x": 3065.292278314675,
       "y": 3312.001613238952,
@@ -2840,11 +2827,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "174",
-    "webp": "webp/174.webp",
+    "id": "173",
+    "webp": "webp/173.webp",
     "label": "",
     "url": "",
-    "rank": 219,
+    "rank": 218,
     "canvas": {
       "x": 3314.3544575642463,
       "y": 3309.001393234493,
@@ -2857,7 +2844,7 @@ window.STICKERS = [
     "webp": "webp/099.webp",
     "label": "",
     "url": "",
-    "rank": 220,
+    "rank": 219,
     "canvas": {
       "x": 3514.6110073623477,
       "y": 3324.8365204865663,
@@ -2866,11 +2853,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "161",
-    "webp": "webp/161.webp",
+    "id": "160",
+    "webp": "webp/160.webp",
     "label": "",
     "url": "",
-    "rank": 221,
+    "rank": 220,
     "canvas": {
       "x": 3747.6738989717765,
       "y": 3324.1434411964797,
@@ -2883,7 +2870,7 @@ window.STICKERS = [
     "webp": "webp/041.webp",
     "label": "",
     "url": "",
-    "rank": 222,
+    "rank": 221,
     "canvas": {
       "x": 88.43082588657761,
       "y": 3606.1153187856394,
@@ -2892,11 +2879,11 @@ window.STICKERS = [
     }
   },
   {
-    "id": "211",
-    "webp": "webp/211.webp",
+    "id": "210",
+    "webp": "webp/210.webp",
     "label": "",
     "url": "",
-    "rank": 223,
+    "rank": 222,
     "canvas": {
       "x": 329,
       "y": 3605,
