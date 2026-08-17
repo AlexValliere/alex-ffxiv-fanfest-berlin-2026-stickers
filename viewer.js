@@ -106,6 +106,10 @@
     var onSelect = options.onSelect || function () {};
     var onChange = options.onChange || function () {};
 
+    var onModeChange = options.onModeChange || function () {};
+    var applyingRoute = false;
+    var openStickerId = null;
+
     settings.bookCols = settings.bookCols || 2;
     settings.bookRows = settings.bookRows || 3;
 
@@ -143,6 +147,73 @@
     stage.append(bookHud);
 
     var printRoot = options.printRoot || null;
+
+    function pageForSticker(id) {
+      var per = (settings.bookCols || 2) * (settings.bookRows || 3);
+      var sorted = stickers.slice().sort(byRank);
+      for (var i = 0; i < sorted.length; i += 1) {
+        if (sorted[i].id === id) return Math.floor(i / per);
+      }
+      return 0;
+    }
+
+    function parseRoute() {
+      var raw = (location.hash || "").replace(/^#\/?/, "");
+      var parts = raw.split("/").filter(Boolean);
+      var route = { mode: null, page: null, sticker: null };
+      if (!parts.length) return route;
+      if (parts[0] !== "book" && parts[0] !== "canvas") return route;
+      route.mode = parts[0];
+      var rest = parts.slice(1);
+      if (route.mode === "book" && rest[0] && /^\d+$/.test(rest[0])) {
+        route.page = parseInt(rest[0], 10);
+        route.sticker = rest[1] ? decodeURIComponent(rest[1]) : null;
+      } else if (rest[0]) {
+        route.sticker = decodeURIComponent(rest[0]);
+      }
+      return route;
+    }
+
+    function currentHash() {
+      var hash = mode;
+      if (mode === "book") hash += "/" + (pageIndex + 1);
+      if (openStickerId) hash += "/" + encodeURIComponent(openStickerId);
+      return hash;
+    }
+
+    function writeRoute() {
+      if (applyingRoute) return;
+      var hash = currentHash();
+      var current = (location.hash || "").replace(/^#/, "");
+      if (current === hash) return;
+      if (hash === "canvas" && !current) return;
+      try {
+        history.replaceState(null, "", "#" + hash);
+      } catch (err) {
+        location.hash = hash;
+      }
+    }
+
+    function applyRoute() {
+      var route = parseRoute();
+      applyingRoute = true;
+      var nextMode = route.mode || "canvas";
+      var modeChanged = nextMode !== mode;
+      mode = nextMode;
+      if (mode === "book") {
+        if (route.page >= 1) pageIndex = route.page - 1;
+        else if (route.sticker) pageIndex = pageForSticker(route.sticker);
+      }
+      if (modeChanged) onModeChange(mode);
+      render({ fit: modeChanged });
+      var sticker = route.sticker ? stickerById(stickers, route.sticker) : null;
+      if (sticker) {
+        if (openStickerId !== sticker.id) openLightbox(sticker, true);
+      } else if (openStickerId) {
+        closeLightbox(true);
+      }
+      applyingRoute = false;
+    }
 
     function cancelScheduledFit() {
       if (fitRaf) {
@@ -204,10 +275,11 @@
       if (!silent) onSelect(stickerById(stickers, id));
     }
 
-    function openLightbox(sticker) {
+    function openLightbox(sticker, fromRoute) {
       if (!lightbox || !sticker) return;
       lightbox.replaceChildren();
       lightbox.hidden = false;
+      openStickerId = sticker.id;
       var close = document.createElement("button");
       close.type = "button";
       close.className = "icon-btn lightbox-close";
@@ -219,15 +291,20 @@
       var caption = document.createElement("p");
       setCaption(caption, sticker, "");
       lightbox.append(close, img, caption);
-      close.addEventListener("click", closeLightbox);
+      close.addEventListener("click", function () {
+        closeLightbox();
+      });
       bookHud.hidden = true;
+      if (!fromRoute) writeRoute();
     }
 
-    function closeLightbox() {
+    function closeLightbox(fromRoute) {
       if (!lightbox) return;
       lightbox.hidden = true;
       lightbox.replaceChildren();
+      openStickerId = null;
       bookHud.hidden = mode !== "book";
+      if (!fromRoute) writeRoute();
     }
 
     function makeCanvasSticker(sticker, index) {
@@ -499,10 +576,12 @@
     prevBtn.addEventListener("click", function () {
       pageIndex -= 1;
       render({ fit: false });
+      writeRoute();
     });
     nextBtn.addEventListener("click", function () {
       pageIndex += 1;
       render({ fit: false });
+      writeRoute();
     });
 
     window.addEventListener("keydown", function (event) {
@@ -511,21 +590,46 @@
       if (event.key === "ArrowLeft") {
         pageIndex -= 1;
         render({ fit: false });
+        writeRoute();
       }
       if (event.key === "ArrowRight") {
         pageIndex += 1;
         render({ fit: false });
+        writeRoute();
       }
     });
 
+    window.addEventListener("hashchange", function () {
+      if (applyingRoute) return;
+      if ((location.hash || "").replace(/^#/, "") === currentHash()) return;
+      applyRoute();
+    });
+
+    var initialRoute = parseRoute();
+    if (initialRoute.mode) {
+      mode = initialRoute.mode;
+      onModeChange(mode);
+    }
+    if (mode === "book") {
+      if (initialRoute.page >= 1) pageIndex = initialRoute.page - 1;
+      else if (initialRoute.sticker) pageIndex = pageForSticker(initialRoute.sticker);
+    }
+
     render({ fit: true });
+    if (initialRoute.sticker) {
+      var routed = stickerById(stickers, initialRoute.sticker);
+      if (routed) openLightbox(routed, true);
+    }
 
     return {
       setMode: function (next) {
         var resolved = next === "book" ? "book" : "canvas";
         if (resolved === mode) return;
         mode = resolved;
+        if (mode === "book" && openStickerId) pageIndex = pageForSticker(openStickerId);
+        onModeChange(mode);
         render({ fit: true });
+        writeRoute();
       },
       getMode: function () {
         return mode;

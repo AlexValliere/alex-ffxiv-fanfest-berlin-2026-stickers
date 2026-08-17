@@ -168,7 +168,12 @@
       "        printRoot: document.getElementById('print-book'),",
       "        stickers: window.STICKERS || [],",
       "        settings: window.SETTINGS || { bookCols: 2, bookRows: 3 },",
-      "        editable: false",
+      "        editable: false,",
+      "        onModeChange: function (mode) {",
+      "          document.querySelectorAll('.mode-toggle [data-mode]').forEach(function (node) {",
+      "            node.classList.toggle('active', node.dataset.mode === mode);",
+      "          });",
+      "        }",
       "      });",
       "      document.querySelectorAll('.mode-toggle [data-mode]').forEach(function (button) {",
       "        button.addEventListener('click', function () {",
@@ -245,7 +250,12 @@
     onSelect: function (sticker) {
       if (sticker) selectSticker(sticker.id);
     },
-    onChange: function () {}
+    onChange: function () {},
+    onModeChange: function (mode) {
+      document.querySelectorAll(".mode-toggle [data-mode]").forEach(function (node) {
+        node.classList.toggle("active", node.dataset.mode === mode);
+      });
+    }
   });
 
   bindModeAndZoom();
