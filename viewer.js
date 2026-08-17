@@ -105,6 +105,7 @@
     var editable = !!options.editable;
     var onSelect = options.onSelect || function () {};
     var onChange = options.onChange || function () {};
+    var onSwap = options.onSwap || function () {};
 
     var onModeChange = options.onModeChange || function () {};
     var applyingRoute = false;
@@ -424,8 +425,34 @@
     function wantsPan(event, sticker) {
       if (event.button === 1 || spaceDown || event.altKey) return true;
       if (!editable) return true;
-      if (mode !== "canvas") return true;
-      return !sticker;
+      if (sticker) return false;
+      return true;
+    }
+
+    function clearDropTarget() {
+      world.querySelectorAll(".drop-target, .is-dragging").forEach(function (node) {
+        node.classList.remove("drop-target");
+        node.classList.remove("is-dragging");
+      });
+    }
+
+    function stickerUnderPointer(event, exceptId) {
+      var draggedNode = exceptId ? world.querySelector('[data-id="' + exceptId + '"]') : null;
+      if (draggedNode) draggedNode.style.pointerEvents = "none";
+      var el = document.elementFromPoint(event.clientX, event.clientY);
+      if (draggedNode) draggedNode.style.pointerEvents = "";
+      if (!el) return null;
+      var node = el.closest("[data-id]");
+      if (!node || !stage.contains(node) || node.dataset.id === exceptId) return null;
+      return stickerById(stickers, node.dataset.id);
+    }
+
+    function markDropTarget(event, exceptId) {
+      clearDropTarget();
+      var other = stickerUnderPointer(event, exceptId);
+      if (!other) return;
+      var node = world.querySelector('[data-id="' + other.id + '"]');
+      if (node) node.classList.add("drop-target");
     }
 
     stage.addEventListener("wheel", function (event) {
@@ -459,13 +486,17 @@
       if (drag) {
         var sticker = stickerById(stickers, drag.id);
         if (!sticker) return;
-        sticker.canvas.x = drag.startX + (event.clientX - drag.pointerX) / scale;
-        sticker.canvas.y = drag.startY + (event.clientY - drag.pointerY) / scale;
-        var node = world.querySelector('[data-id="' + drag.id + '"]');
-        if (node) {
-          node.style.left = sticker.canvas.x + "px";
-          node.style.top = sticker.canvas.y + "px";
+        if (mode === "canvas") {
+          sticker.canvas.x = drag.startX + (event.clientX - drag.pointerX) / scale;
+          sticker.canvas.y = drag.startY + (event.clientY - drag.pointerY) / scale;
+          var node = world.querySelector('[data-id="' + drag.id + '"]');
+          if (node) {
+            node.style.left = sticker.canvas.x + "px";
+            node.style.top = sticker.canvas.y + "px";
+            node.classList.add("is-dragging");
+          }
         }
+        markDropTarget(event, drag.id);
         return;
       }
       if (!panning || !panStart) return;
@@ -481,8 +512,32 @@
       var wasDrag = !!drag;
       var moved = didMove;
       if (drag) {
-        drag = null;
-        onChange();
+        var dragged = stickerById(stickers, drag.id);
+        var other = moved ? stickerUnderPointer(event, drag.id) : null;
+        clearDropTarget();
+        if (other && dragged && other.id !== dragged.id) {
+          var rank = dragged.rank;
+          dragged.rank = other.rank;
+          other.rank = rank;
+          dragged.canvas = {
+            x: other.canvas.x,
+            y: other.canvas.y,
+            rot: other.canvas.rot,
+            scale: other.canvas.scale
+          };
+          other.canvas = {
+            x: drag.startX,
+            y: drag.startY,
+            rot: drag.startRot,
+            scale: drag.startScale
+          };
+          drag = null;
+          render({ fit: false });
+          onSwap(dragged, other);
+        } else {
+          if (mode === "canvas" && dragged) onChange();
+          drag = null;
+        }
       }
       if (moved) {
         suppressClick = true;
@@ -531,12 +586,14 @@
         panning = true;
         stage.classList.add("is-panning");
         panStart = { x: event.clientX - panX, y: event.clientY - panY };
-      } else if (editable && mode === "canvas" && sticker) {
+      } else if (editable && sticker) {
         ensureCanvas(sticker, 0, stickers.length);
         drag = {
           id: sticker.id,
           startX: sticker.canvas.x,
           startY: sticker.canvas.y,
+          startRot: sticker.canvas.rot || 0,
+          startScale: sticker.canvas.scale || 1,
           pointerX: event.clientX,
           pointerY: event.clientY
         };

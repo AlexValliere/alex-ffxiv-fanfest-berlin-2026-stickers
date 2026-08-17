@@ -266,6 +266,10 @@
       if (sticker) selectSticker(sticker.id);
     },
     onChange: function () {},
+    onSwap: function () {
+      stickers.sort(Viewer.byRank);
+      renderList();
+    },
     onModeChange: function (mode) {
       document.querySelectorAll(".mode-toggle [data-mode]").forEach(function (node) {
         node.classList.toggle("active", node.dataset.mode === mode);

@@ -266,8 +266,20 @@ body.editor .app {
   outline-offset: 3px;
 }
 
-body.editor .canvas-sticker {
+body.editor .canvas-sticker,
+body.editor .book-cell[data-id] {
   cursor: move;
+}
+
+.canvas-sticker.is-dragging {
+  z-index: 4;
+  opacity: 0.92;
+}
+
+.canvas-sticker.drop-target img,
+.book-cell.drop-target img {
+  outline: 2px dashed var(--gold);
+  outline-offset: 4px;
 }
 
 .book-world {
