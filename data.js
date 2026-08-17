@@ -983,8 +983,8 @@ window.STICKERS = [
   {
     "id": "085",
     "webp": "webp/085.webp",
-    "label": "",
-    "url": "",
+    "label": "Kazan Raien (By Nado)",
+    "url": "https://bsky.app/profile/nadocchi.bsky.social",
     "rank": 76,
     "canvas": {
       "x": 1673.9028018965325,
@@ -1048,8 +1048,8 @@ window.STICKERS = [
   {
     "id": "152",
     "webp": "webp/152.webp",
-    "label": "",
-    "url": "",
+    "label": "Momo Phi @odin (By JoyWhale)",
+    "url": "https://www.instagram.com/joywhalecosplay",
     "rank": 81,
     "canvas": {
       "x": 2830.318341719824,
@@ -2894,8 +2894,8 @@ window.STICKERS = [
   {
     "id": "223",
     "webp": "webp/223.webp",
-    "label": "",
-    "url": "",
+    "label": "Ras Umbriel @shiva (By @Deeiki1)",
+    "url": "https://x.com/Deiiki1",
     "rank": 223,
     "canvas": {
       "x": 329,
