@@ -2890,5 +2890,18 @@ window.STICKERS = [
       "rot": 3.8077305195413835,
       "scale": 1
     }
+  },
+  {
+    "id": "223",
+    "webp": "webp/223.webp",
+    "label": "",
+    "url": "",
+    "rank": 223,
+    "canvas": {
+      "x": 329,
+      "y": 3605,
+      "rot": 5,
+      "scale": 1
+    }
   }
 ];
