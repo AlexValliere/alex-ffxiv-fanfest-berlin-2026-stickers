@@ -294,8 +294,8 @@ window.STICKERS = [
   {
     "id": "093",
     "webp": "webp/093.webp",
-    "label": "",
-    "url": "",
+    "label": "Lin Linhardt @Louisoix",
+    "url": "https://www.instagram.com/_linhardt",
     "rank": 23,
     "canvas": {
       "x": 1220.5906076672727,
