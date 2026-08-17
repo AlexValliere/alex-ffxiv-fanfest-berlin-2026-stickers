@@ -48,9 +48,9 @@
         settings: window.SETTINGS || { bookCols: 2, bookRows: 3 },
         editable: false
       });
-      document.querySelectorAll("[data-mode]").forEach(function (button) {
+      document.querySelectorAll(".mode-toggle [data-mode]").forEach(function (button) {
         button.addEventListener("click", function () {
-          document.querySelectorAll("[data-mode]").forEach(function (node) {
+          document.querySelectorAll(".mode-toggle [data-mode]").forEach(function (node) {
             node.classList.toggle("active", node === button);
           });
           app.setMode(button.dataset.mode);

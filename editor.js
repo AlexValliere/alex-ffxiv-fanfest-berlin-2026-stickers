@@ -72,7 +72,11 @@
     renderList();
     if (viewer) viewer.select(id, true);
     var row = list.querySelector('[data-id="' + id + '"]');
-    if (row) row.scrollIntoView({ block: "nearest" });
+    if (!row) return;
+    var listRect = list.getBoundingClientRect();
+    var rowRect = row.getBoundingClientRect();
+    if (rowRect.top < listRect.top) list.scrollTop -= listRect.top - rowRect.top;
+    else if (rowRect.bottom > listRect.bottom) list.scrollTop += rowRect.bottom - listRect.bottom;
   }
 
   function refreshViewer(fit) {
@@ -166,9 +170,9 @@
       "        settings: window.SETTINGS || { bookCols: 2, bookRows: 3 },",
       "        editable: false",
       "      });",
-      "      document.querySelectorAll('[data-mode]').forEach(function (button) {",
+      "      document.querySelectorAll('.mode-toggle [data-mode]').forEach(function (button) {",
       "        button.addEventListener('click', function () {",
-      "          document.querySelectorAll('[data-mode]').forEach(function (node) {",
+      "          document.querySelectorAll('.mode-toggle [data-mode]').forEach(function (node) {",
       "            node.classList.toggle('active', node === button);",
       "          });",
       "          app.setMode(button.dataset.mode);",
@@ -196,9 +200,9 @@
   }
 
   function bindModeAndZoom() {
-    document.querySelectorAll("[data-mode]").forEach(function (button) {
+    document.querySelectorAll(".mode-toggle [data-mode]").forEach(function (button) {
       button.addEventListener("click", function () {
-        document.querySelectorAll("[data-mode]").forEach(function (node) {
+        document.querySelectorAll(".mode-toggle [data-mode]").forEach(function (node) {
           node.classList.toggle("active", node === button);
         });
         viewer.setMode(button.dataset.mode);

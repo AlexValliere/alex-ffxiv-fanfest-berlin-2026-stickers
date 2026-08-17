@@ -121,6 +121,8 @@
     var spaceDown = false;
     var pointerStart = null;
     var didMove = false;
+    var suppressClick = false;
+    var fitRaf = 0;
     var PAN_THRESHOLD = 6;
 
     var world = document.createElement("div");
@@ -142,12 +144,20 @@
 
     var printRoot = options.printRoot || null;
 
+    function cancelScheduledFit() {
+      if (fitRaf) {
+        cancelAnimationFrame(fitRaf);
+        fitRaf = 0;
+      }
+    }
+
     function applyTransform() {
       world.style.transform = "translate(" + panX + "px, " + panY + "px) scale(" + scale + ")";
       stage.classList.toggle("zoomed-out", scale < ZOOMED_OUT);
     }
 
     function setScaleAt(clientX, clientY, nextScale) {
+      cancelScheduledFit();
       var rect = stage.getBoundingClientRect();
       var cx = clientX - rect.left;
       var cy = clientY - rect.top;
@@ -307,13 +317,17 @@
 
     function render(opts) {
       opts = opts || {};
-      stage.dataset.mode = mode;
+      stage.dataset.view = mode;
       bookHud.hidden = mode !== "book";
       if (mode === "book") renderBook();
       else renderCanvas();
       markSelected();
       if (opts.fit) {
-        requestAnimationFrame(fit);
+        cancelScheduledFit();
+        fitRaf = requestAnimationFrame(function () {
+          fitRaf = 0;
+          fit();
+        });
       }
     }
 
@@ -339,6 +353,7 @@
 
     stage.addEventListener("wheel", function (event) {
       event.preventDefault();
+      cancelScheduledFit();
       if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
         panX -= event.deltaX;
         panY -= event.deltaY;
@@ -353,13 +368,83 @@
       event.preventDefault();
     });
 
+    stage.addEventListener("dragstart", function (event) {
+      event.preventDefault();
+    });
+
+    function onPointerMove(event) {
+      if (!pointerStart || event.pointerId !== pointerStart.pointerId) return;
+      if (event.cancelable) event.preventDefault();
+      cancelScheduledFit();
+      var dx = event.clientX - pointerStart.x;
+      var dy = event.clientY - pointerStart.y;
+      if (dx * dx + dy * dy >= PAN_THRESHOLD * PAN_THRESHOLD) didMove = true;
+      if (drag) {
+        var sticker = stickerById(stickers, drag.id);
+        if (!sticker) return;
+        sticker.canvas.x = drag.startX + (event.clientX - drag.pointerX) / scale;
+        sticker.canvas.y = drag.startY + (event.clientY - drag.pointerY) / scale;
+        var node = world.querySelector('[data-id="' + drag.id + '"]');
+        if (node) {
+          node.style.left = sticker.canvas.x + "px";
+          node.style.top = sticker.canvas.y + "px";
+        }
+        return;
+      }
+      if (!panning || !panStart) return;
+      panX = event.clientX - panStart.x;
+      panY = event.clientY - panStart.y;
+      applyTransform();
+    }
+
+    function onPointerUp(event) {
+      if (!pointerStart || event.pointerId !== pointerStart.pointerId) return;
+      if (event.cancelable) event.preventDefault();
+      var sticker = pointerStart.sticker;
+      var wasDrag = !!drag;
+      var moved = didMove;
+      if (drag) {
+        drag = null;
+        onChange();
+      }
+      if (moved) {
+        suppressClick = true;
+        setTimeout(function () {
+          suppressClick = false;
+        }, 50);
+      }
+      panning = false;
+      panStart = null;
+      pointerStart = null;
+      didMove = false;
+      stage.classList.remove("is-panning");
+      applyTransform();
+      if (!moved && !wasDrag && sticker && !editable) openLightbox(sticker);
+    }
+
+    window.addEventListener("pointermove", onPointerMove, { passive: false });
+    window.addEventListener("pointerup", onPointerUp, { passive: false });
+    window.addEventListener("pointercancel", onPointerUp, { passive: false });
+
+    document.addEventListener("click", function (event) {
+      if (!suppressClick) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      suppressClick = false;
+    }, true);
+
     stage.addEventListener("pointerdown", function (event) {
       if (event.button !== 0 && event.button !== 1) return;
       if (event.target.closest("a, button, input")) return;
       event.preventDefault();
+      cancelScheduledFit();
+      if (document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
       var sticker = stickerFromEvent(event);
       didMove = false;
       pointerStart = {
+        pointerId: event.pointerId,
         x: event.clientX,
         y: event.clientY,
         sticker: sticker
@@ -383,52 +468,7 @@
         stage.classList.add("is-panning");
         panStart = { x: event.clientX - panX, y: event.clientY - panY };
       }
-      stage.setPointerCapture(event.pointerId);
     });
-
-    stage.addEventListener("pointermove", function (event) {
-      if (pointerStart && !didMove) {
-        var dx = event.clientX - pointerStart.x;
-        var dy = event.clientY - pointerStart.y;
-        if (dx * dx + dy * dy >= PAN_THRESHOLD * PAN_THRESHOLD) didMove = true;
-      }
-      if (drag) {
-        var sticker = stickerById(stickers, drag.id);
-        if (!sticker) return;
-        sticker.canvas.x = drag.startX + (event.clientX - drag.pointerX) / scale;
-        sticker.canvas.y = drag.startY + (event.clientY - drag.pointerY) / scale;
-        var node = world.querySelector('[data-id="' + drag.id + '"]');
-        if (node) {
-          node.style.left = sticker.canvas.x + "px";
-          node.style.top = sticker.canvas.y + "px";
-        }
-        return;
-      }
-      if (!panning || !panStart) return;
-      panX = event.clientX - panStart.x;
-      panY = event.clientY - panStart.y;
-      applyTransform();
-    });
-
-    function endPointer(event) {
-      var sticker = pointerStart && pointerStart.sticker;
-      var wasDrag = !!drag;
-      var moved = didMove;
-      if (drag) {
-        drag = null;
-        onChange();
-      }
-      panning = false;
-      panStart = null;
-      pointerStart = null;
-      didMove = false;
-      stage.classList.remove("is-panning");
-      if (event && event.button === 1) event.preventDefault();
-      if (!moved && !wasDrag && sticker && !editable) openLightbox(sticker);
-    }
-
-    stage.addEventListener("pointerup", endPointer);
-    stage.addEventListener("pointercancel", endPointer);
 
     stage.addEventListener("dblclick", function (event) {
       if (event.target.closest("a, button")) return;
@@ -482,7 +522,9 @@
 
     return {
       setMode: function (next) {
-        mode = next === "book" ? "book" : "canvas";
+        var resolved = next === "book" ? "book" : "canvas";
+        if (resolved === mode) return;
+        mode = resolved;
         render({ fit: true });
       },
       getMode: function () {
