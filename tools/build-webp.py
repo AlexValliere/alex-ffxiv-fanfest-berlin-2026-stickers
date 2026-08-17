@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
-"""Convert archive PNGs to display WebP and merge sticker metadata.
+"""Sync sticker WebPs and data.js from the PNG files on disk.
 
-Usage (from repo root or this folder):
+Usage (from repo root):
     python tools/build-webp.py
+    python tools/build-webp.py --drop 212
+
+Existing webp/{id}.webp files are kept unless the PNG is newer.
+Stickers removed from the folder are dropped from data.js. Labels, ranks,
+and canvas positions are preserved for IDs that still exist.
+
+If you deleted a PNG and renamed later files to close the gap, pass
+--drop <id> so metadata shifts with the files (old 213 becomes 212, etc.).
 
 Requires Pillow:  python -m pip install Pillow
-
-Leaves every *.png untouched. Writes webp/{id}.webp (quality 80, max edge
-1200px) and creates or merges data.js without wiping labels, ranks, or
-canvas positions.
 """
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import math
@@ -34,6 +39,17 @@ def sticker_id(path: Path) -> str:
     return path.stem
 
 
+def pad_id(value: int) -> str:
+    return f"{value:03d}"
+
+
+def parse_id(sid: str) -> int | None:
+    try:
+        return int(sid)
+    except ValueError:
+        return None
+
+
 def canvas_layout(sid: str, index: int, total: int) -> dict:
     cols = max(1, math.ceil(math.sqrt(total * 1.2)))
     col = index % cols
@@ -49,14 +65,12 @@ def canvas_layout(sid: str, index: int, total: int) -> dict:
 
 
 def extract_js_assign(source: str, name: str):
-    pattern = rf"window\.{name}\s*=\s*"
-    match = re.search(pattern, source)
+    match = re.search(rf"window\.{name}\s*=\s*", source)
     if not match:
         return None
-    start = match.end()
     decoder = json.JSONDecoder()
     try:
-        value, _ = decoder.raw_decode(source[start:])
+        value, _ = decoder.raw_decode(source[match.end() :])
     except json.JSONDecodeError:
         return None
     return value
@@ -97,7 +111,28 @@ def convert_png(src: Path, dest: Path) -> None:
         )
 
 
+def metadata_for(sid: str, existing: dict, drop_id: int | None) -> dict:
+    if drop_id is None:
+        return existing.get(sid, {})
+    numeric = parse_id(sid)
+    if numeric is None or numeric < drop_id:
+        return existing.get(sid, {})
+    return existing.get(pad_id(numeric + 1), {})
+
+
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Refresh webp/ and data.js from PNG files.")
+    parser.add_argument(
+        "--drop",
+        metavar="ID",
+        help="Deleted sticker id after files were renamed to close the gap (example: 212)",
+    )
+    args = parser.parse_args()
+    drop_id = parse_id(str(args.drop)) if args.drop else None
+    if args.drop and drop_id is None:
+        print(f"Invalid --drop id: {args.drop}", file=sys.stderr)
+        return 1
+
     pngs = sorted(ROOT.glob("*.png"), key=lambda p: p.name.lower())
     if not pngs:
         print(f"No PNG files found in {ROOT}", file=sys.stderr)
@@ -106,6 +141,7 @@ def main() -> int:
     existing, settings = load_existing(DATA_JS)
     WEBP_DIR.mkdir(parents=True, exist_ok=True)
 
+    keep_ids = {sticker_id(png) for png in pngs}
     stickers: list[dict] = []
     converted = 0
     skipped = 0
@@ -114,8 +150,11 @@ def main() -> int:
     for index, png in enumerate(pngs):
         sid = sticker_id(png)
         dest = WEBP_DIR / f"{sid}.webp"
+        numeric = parse_id(sid)
+        shifted = drop_id is not None and numeric is not None and numeric >= drop_id
         needs_write = (
-            not dest.exists()
+            shifted
+            or not dest.exists()
             or dest.stat().st_mtime < png.stat().st_mtime
         )
         if needs_write:
@@ -125,7 +164,7 @@ def main() -> int:
         else:
             skipped += 1
 
-        prev = existing.get(sid, {})
+        prev = metadata_for(sid, existing, drop_id)
         canvas = prev.get("canvas") or canvas_layout(sid, index, total)
         rank = prev.get("rank")
         if not isinstance(rank, int) or rank < 1:
@@ -146,13 +185,22 @@ def main() -> int:
             }
         )
 
+    removed = sorted(set(existing) - keep_ids)
+    orphans = 0
+    for webp in WEBP_DIR.glob("*.webp"):
+        if sticker_id(webp) not in keep_ids:
+            webp.unlink()
+            orphans += 1
+            print(f"removed orphan {webp.relative_to(ROOT)}")
+
     stickers.sort(key=lambda item: (item["rank"], item["id"]))
     for index, item in enumerate(stickers, start=1):
         item["rank"] = index
 
     write_data_js(DATA_JS, settings, stickers)
     print(
-        f"Done. {converted} converted, {skipped} unchanged, "
+        f"Done. {converted} converted, {skipped} webp kept, "
+        f"{len(removed)} ids dropped from data.js, {orphans} orphan webp removed, "
         f"{len(stickers)} stickers in {DATA_JS.name}"
     )
     return 0
