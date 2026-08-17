@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fanfest Berlin 2026 Stickers</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="viewer">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Fanfest Berlin 2026</h1>
+        <p>Sticker exchange</p>
+      </div>
+      <div class="topbar-spacer"></div>
+      <div class="mode-toggle" role="tablist">
+        <button type="button" data-mode="canvas" class="active">Canvas</button>
+        <button type="button" data-mode="book">Sticker book</button>
+      </div>
+      <div class="zoom-controls">
+        <button type="button" class="icon-btn" data-zoom="out" aria-label="Zoom out">&minus;</button>
+        <button type="button" class="icon-btn" data-zoom="fit">Fit</button>
+        <button type="button" class="icon-btn" data-zoom="in" aria-label="Zoom in">+</button>
+      </div>
+    </header>
+    <div id="stage" class="stage"></div>
+  </div>
+  <div id="lightbox" class="lightbox" hidden></div>
+  <div id="print-book" class="print-book"></div>
+  <script src="data.js"></script>
+  <script src="viewer.js"></script>
+  <script>
+    (function () {
+      var missing = !window.STICKERS || !window.STICKERS.length;
+      if (missing) {
+        var banner = document.createElement("div");
+        banner.className = "banner";
+        banner.innerHTML = "<strong>No stickers yet.</strong><p>Run <code>python tools/build-webp.py</code> to generate <code>webp/</code> and <code>data.js</code>.</p>";
+        document.getElementById("stage").append(banner);
+        return;
+      }
+      var app = Viewer.start({
+        stage: document.getElementById("stage"),
+        lightbox: document.getElementById("lightbox"),
+        printRoot: document.getElementById("print-book"),
+        stickers: window.STICKERS,
+        settings: window.SETTINGS || { bookCols: 2, bookRows: 3 },
+        editable: false
+      });
+      document.querySelectorAll("[data-mode]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          document.querySelectorAll("[data-mode]").forEach(function (node) {
+            node.classList.toggle("active", node === button);
+          });
+          app.setMode(button.dataset.mode);
+        });
+      });
+      document.querySelector('[data-zoom="out"]').addEventListener("click", function () { app.zoom(-1); });
+      document.querySelector('[data-zoom="in"]').addEventListener("click", function () { app.zoom(1); });
+      document.querySelector('[data-zoom="fit"]').addEventListener("click", function () { app.fit(); });
+    })();
+  </script>
+</body>
+</html>

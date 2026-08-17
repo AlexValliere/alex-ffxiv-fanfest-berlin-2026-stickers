@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Fanfest stickers</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="editor">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Sticker editor</h1>
+        <p>Local only — not for sharing</p>
+      </div>
+      <div class="topbar-spacer"></div>
+      <div class="mode-toggle" role="tablist">
+        <button type="button" data-mode="canvas" class="active">Canvas</button>
+        <button type="button" data-mode="book">Sticker book</button>
+      </div>
+      <div class="zoom-controls">
+        <button type="button" class="icon-btn" data-zoom="out" aria-label="Zoom out">&minus;</button>
+        <button type="button" class="icon-btn" data-zoom="fit">Fit</button>
+        <button type="button" class="icon-btn" data-zoom="in" aria-label="Zoom in">+</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <div class="sidebar-fields">
+        <label for="label-input">Label</label>
+        <input id="label-input" type="text" placeholder="Artist or character name">
+        <label for="url-input">Link</label>
+        <input id="url-input" type="url" placeholder="https://">
+        <div class="field-row">
+          <div>
+            <label for="cols-input">Book columns</label>
+            <input id="cols-input" type="number" min="1" max="4" value="2">
+          </div>
+          <div>
+            <label for="rows-input">Book rows</label>
+            <input id="rows-input" type="number" min="1" max="5" value="3">
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-actions">
+        <button type="button" id="scatter-btn">Auto-scatter canvas</button>
+        <button type="button" class="primary" id="export-btn">Export data.js + index.html</button>
+      </div>
+      <ul id="sticker-list" class="sticker-list"></ul>
+    </aside>
+
+    <div id="stage" class="stage"></div>
+  </div>
+  <div id="lightbox" class="lightbox" hidden></div>
+  <div id="print-book" class="print-book"></div>
+  <div id="empty-state" class="empty-state" hidden>
+    <strong>No stickers loaded.</strong>
+    <p>Run <code>python tools/build-webp.py</code> from this folder, then reload. That creates <code>webp/</code> and <code>data.js</code>.</p>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="viewer.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>
