@@ -1269,8 +1269,8 @@ window.STICKERS = [
   {
     "id": "033",
     "webp": "webp/033.webp",
-    "label": "",
-    "url": "",
+    "label": "(By Saltska)",
+    "url": "https://x.com/saltska",
     "rank": 98,
     "canvas": {
       "x": 2823.4681538362365,
