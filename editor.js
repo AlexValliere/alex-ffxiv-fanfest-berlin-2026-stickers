@@ -84,19 +84,30 @@
     viewer.refresh({ fit: !!fit });
   }
 
-  function autoScatter() {
+  function layoutCanvasByRank(jitter) {
     var cols = Math.max(1, Math.ceil(Math.sqrt(stickers.length * 1.2)));
     var order = stickers.slice().sort(Viewer.byRank);
     order.forEach(function (sticker, index) {
       var col = index % cols;
       var row = Math.floor(index / cols);
       sticker.canvas = {
-        x: 80 + col * 230 + Math.random() * 36 - 18,
-        y: 80 + row * 270 + Math.random() * 36 - 18,
-        rot: Math.random() * 12 - 6,
+        x: 80 + col * 230 + (jitter ? Math.random() * 36 - 18 : 0),
+        y: 80 + row * 270 + (jitter ? Math.random() * 36 - 18 : 0),
+        rot: jitter ? Math.random() * 12 - 6 : (sticker.canvas && sticker.canvas.rot) || 0,
         scale: (sticker.canvas && sticker.canvas.scale) || 1
       };
     });
+  }
+
+  function applyRankingChange() {
+    reindexRanks();
+    layoutCanvasByRank(false);
+    renderList();
+    refreshViewer(false);
+  }
+
+  function autoScatter() {
+    layoutCanvasByRank(true);
     refreshViewer(true);
   }
 
@@ -107,9 +118,7 @@
       stickers[i] = stickers[j];
       stickers[j] = tmp;
     }
-    reindexRanks();
-    renderList();
-    refreshViewer(false);
+    applyRankingChange();
   }
 
   function download(filename, text) {
@@ -323,9 +332,7 @@
     if (from < 0 || to < 0) return;
     var moved = stickers.splice(from, 1)[0];
     stickers.splice(to, 0, moved);
-    reindexRanks();
-    renderList();
-    refreshViewer(false);
+    applyRankingChange();
   });
 
   document.getElementById("scatter-btn").addEventListener("click", autoScatter);
